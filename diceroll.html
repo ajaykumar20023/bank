@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Roll - 3 Colors</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.2s;
+    }
+
+    #dice {
+      font-size: 100px;
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Dice Roller 🎲</h1>
+
+<div id="dice">⚀</div>
+
+<button onclick="rollDice()">Roll Dice</button>
+
+<script>
+  const diceFaces = ["1⚀","2⚁","3⚂","4⚃","5⚄","⚅"];
+
+  // Only 3 colors
+  const colors = ["#FF5733", "#33FF57", "#3357FF" ,"red", "pink", "brown"];
+
+  function rollDice() {
+    // Dice roll
+    const randomIndex = Math.floor(Math.random() * 6);
+    document.getElementById("dice").textContent = diceFaces[randomIndex];
+
+    // Pick one of 3 colors
+    const colorIndex = Math.floor(Math.random() * 6);
+    document.body.style.backgroundColor = colors[colorIndex];
+  }
+</script>
+
+</body>
+</html>
